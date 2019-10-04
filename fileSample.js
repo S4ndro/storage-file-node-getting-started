@@ -79,8 +79,9 @@ function runFileSamples() {
 function basicStorageFileOperations(callback) {
   // Create a file client for interacting with the file service from connection string
   // How to create a storage connection string - http://msdn.microsoft.com/en-us/library/azure/ee758697.aspx
-  var fileService = storage.createFileService(readConfig().connectionString);
-
+  //var fileService = storage.createFileService(readConfig().connectionString);
+  var fileService = storage.createFileService(process.env.CONNSTRING);
+  
   var imageToUpload = "HelloWorld.png";
   var shareName = "demofileshare-" + guid.v1();
   var directoryName = "demofiledirectory";
