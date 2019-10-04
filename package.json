@@ -43,6 +43,7 @@
   },
   "scripts": {
     "check": "jshint fileSample.js"
+    "start": "node fileSample.js"
   },
   "readmeFilename": "README.md"
 }
