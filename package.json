@@ -42,7 +42,7 @@
     "url": "https://github.com/Azure-Samples/storage-file-node-getting-started/issues"
   },
   "scripts": {
-    "check": "jshint fileSample.js"
+    "check": "jshint fileSample.js",
     "start": "node ./fileSample.js"
   },
   "readmeFilename": "README.md"
