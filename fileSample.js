@@ -1,3 +1,22 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@S4ndro 
+0
+011S4ndro/storage-file-node-getting-started
+forked from Azure-Samples/storage-file-node-getting-started
+ Code Pull requests 0 Projects 0 Wiki Security Insights Settings
+storage-file-node-getting-started/fileSample.js
+@S4ndro S4ndro CONNSTRING as env variable
+bda7838 5 days ago
+@yaxia@S4ndro
+215 lines (197 sloc)  10.6 KB
+  
 //----------------------------------------------------------------------------------
 // Microsoft Developer & Platform Evangelism
 //
@@ -126,28 +145,7 @@ function basicStorageFileOperations(callback) {
                         console.log(util.format('   - %s (type: directory)'), results.directories[j].name);
                       }
                       
-                      // Download the uploaded file to your file system
-                      console.log('5. Download the uploaded file to your file system');
-                      var downloadedImageName = util.format('CopyOf%s', imageToUpload);
-                      fileService.getFileToLocalFile(shareName, directoryName, fileName, downloadedImageName, function (error) {
-                        if (error) {
-                          callback(error);
-                        } else {
-                          // Clean up after the demo
-                          console.log('6. Delete file');
-                          fileService.deleteFileIfExists(shareName, directoryName, fileName, function (error) {
-                            try { fs.unlinkSync(downloadedImageName); } catch (e) { }
-                            if (error) {
-                              callback(error);
-                            } else {
-                              console.log('7. Delete file share');
-                              fileService.deleteShareIfExists(shareName, function (error) {
-                                callback(error);
-                              });
-                            }
-                          });
-                        }
-                      });
+                      
                     }
                   });
                 }
