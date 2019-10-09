@@ -1,4 +1,3 @@
- 
 //----------------------------------------------------------------------------------
 // Microsoft Developer & Platform Evangelism
 //
@@ -127,7 +126,13 @@ function basicStorageFileOperations(callback) {
                         console.log(util.format('   - %s (type: directory)'), results.directories[j].name);
                       }
                       
-                      
+                      // Download the uploaded file to your file system
+                      console.log('5. Download the uploaded file to your file system');
+                      var downloadedImageName = util.format('CopyOf%s', imageToUpload);
+                      fileService.getFileToLocalFile(shareName, directoryName, fileName, downloadedImageName, function (error) {
+                          callback(error);
+                       
+                      });
                     }
                   });
                 }
